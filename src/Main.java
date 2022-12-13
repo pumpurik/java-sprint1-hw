@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         StepTracker data = new StepTracker();
-        StepTracker.Converter convert = data.new Converter();
+        Converter convert = new Converter();
         Scanner scanner = new Scanner(System.in);
         while (true){
             printMenu();
@@ -44,8 +44,8 @@ public class Main {
                 System.out.println("Общее количество шагов - " + data.countStepsPerMonth(month));
                 System.out.println("Максимальное пройденное количество шагов - " + data.countMaxSteps(month));
                 System.out.println("Среднее количество шагов в день составило - " + data.countAverageSteps(month));
-                System.out.println("Пройденная дистанция - " + convert.countDistance(month) + " км!");
-                System.out.println("Вы сожгли - " + convert.countCalories(month) + " килокалорий!");
+                System.out.println("Пройденная дистанция - " + convert.countDistance(month, data) + " км!");
+                System.out.println("Вы сожгли - " + convert.countCalories(month,data) + " килокалорий!");
                 System.out.println("Лучшая серия - " + data.bestSeriesDays(month) + " подряд идущих дней!");
 
             }
@@ -69,7 +69,7 @@ public class Main {
         }
     }
     public static void printMenu(){
-        System.out.println("");
+        System.out.println(" ");
         System.out.println("Что вы хотите сделать?");
         System.out.println("1 - ввести количество шагов за определённый день");
         System.out.println("2 - напечатать статистику за определённый месяц");
