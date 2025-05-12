@@ -1,15 +1,9 @@
 public class Converter {
-    int centimeters = 75;
-    int calories = 50;
-    int countDistance (int month, StepTracker data){
-        int sum = data.countStepsPerMonth (month);
-        int km=(sum*centimeters)/100000;
-        return km;
+    int convertToKm(int steps) {
+        return steps*75/100000;
     }
-    int countCalories (int month, StepTracker data){
-        int sum = data.countStepsPerMonth (month);
-        int kilocalories=(sum*calories)/1000;
-        return kilocalories;
+
+    int convertStepsToKilocalories(int steps) {
+        return steps*50/1000;
     }
 }
-
